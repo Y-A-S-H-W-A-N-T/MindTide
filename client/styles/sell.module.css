@@ -1,0 +1,99 @@
+/* sell.module.css */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.input, .textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+.input:focus, .textarea:focus {
+  outline: none;
+  border-color: #007BFF;
+}
+
+.submitButton {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: 2px solid #3ce71e;
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+.submitButton:hover {
+  background-color: #61e565;
+  color: white;
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+  .title {
+      font-size: 24px; /* Smaller title for mobile */
+  }
+
+  .input, .textarea {
+      font-size: 12px; /* Smaller font size for inputs */
+      padding: 8px; /* Adjust padding for smaller screens */
+  }
+
+  .submitButton {
+      font-size: 14px; /* Smaller button font size */
+      padding: 8px 10px; /* Adjust button padding */
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+      padding: 15px; /* Reduce padding for smaller screens */
+  }
+
+  .title {
+      font-size: 22px; /* Further reduce title size */
+  }
+
+  .label {
+      font-size: 14px; /* Smaller label font size */
+  }
+}
