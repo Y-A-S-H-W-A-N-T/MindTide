@@ -7,6 +7,8 @@ import { useRouter } from "next/router";
 import LOGO from '../styles/icons/logo.png'
 import SELL from '../styles/icons/sell.png'
 
+axios.post('https://mind-tide.vercel.app/api/').then((res) => console.log(res.data.msg))
+
 export default function Home() {
 
   const [products,setProducts] = useState([])
