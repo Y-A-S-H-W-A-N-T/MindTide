@@ -18,7 +18,7 @@ function EditProduct() {
     
 
     const get_product = async () => {
-        const response = await axios.get(`http://localhost:8000/product/get-products/${id}`);
+        const response = await axios.get(`https://mindtide.onrender.com/product/get-products/${id}`);
         if (response.status === 200) {
             const productData = response.data.product;
             console.log("DATA = ",productData)
@@ -86,7 +86,7 @@ function EditProduct() {
 
     const SaveChanges = async() => {
         setLoading(true)
-        await axios.put(`http://localhost:8000/product/update-product/${product._id}`,{
+        await axios.put(`https://mindtide.onrender.com/product/update-product/${product._id}`,{
             ...product,
             thumbnail,
             images,

@@ -30,7 +30,7 @@ function SellProduct() {
     e.preventDefault();
     setLoading(true)
 
-    await axios.post('http://localhost:8000/product/add-product',data)
+    await axios.post('https://mindtide.onrender.com/product/add-product',data)
     .then((res)=>{
         if(res.status === 200)
         {

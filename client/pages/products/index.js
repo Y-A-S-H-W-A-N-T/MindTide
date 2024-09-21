@@ -12,7 +12,7 @@ function Product() {
     const router = useRouter()
 
     const get_product = async () => {
-        const response = await axios.get(`http://localhost:8000/product/get-products/${id}`);
+        const response = await axios.get(`https://mindtide.onrender.com/product/get-products/${id}`);
         if (response.status === 200) {
             setProduct(response.data.product);
         } else if (response.data.status === 404) {
@@ -32,7 +32,7 @@ function Product() {
     };
 
     const deleteProduct = async()=>{
-        await axios.delete(`http://localhost:8000/product/delete-product/${product._id}`)
+        await axios.delete(`https://mindtide.onrender.com/product/delete-product/${product._id}`)
         .then((res)=>{
             if(res.status === 200){
                 router.replace('/')
