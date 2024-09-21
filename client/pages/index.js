@@ -14,7 +14,7 @@ export default function Home() {
   const router = useRouter()
 
   const fetch_Products = async()=>{
-    const result = await axios.get('/api/fetchProducts')
+    const result = await axios.get('https://mind-tide.vercel.app/api/fetchProducts')
     console.log("TEST : ",result)
     if(result.status === 200){
       setProducts(result.data.products)
