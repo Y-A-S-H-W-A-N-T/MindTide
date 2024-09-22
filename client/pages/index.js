@@ -11,13 +11,16 @@ import SELL from '../styles/icons/sell.png'
 export default function Home() {
 
   const [products,setProducts] = useState([])
+  const [loading,setLoading] = useState(false)
 
   const router = useRouter()
 
   const fetch_Products = async()=>{
+    setLoading(true)
     const result = await axios.get('https://mindtide.onrender.com/product/get-products')
     if(result.status === 200){
       setProducts(result.data.products)
+      setLoading(false)
     }
     else if(result.data.status === 404){
       alert(result.data.msg)
@@ -35,6 +38,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       {/* Navbar */}
+      <>
       <nav className={styles.navbar}>
         <div className={styles.logo}>
           <Image src={LOGO} alt='Logo' width={100} height={100} />
@@ -46,7 +50,8 @@ export default function Home() {
 
       {/* Products */}
       <div className={styles.products}>
-        {products.map((product,ind) => (
+      {loading && <h1>Loading Products</h1>}
+        {products && products.map((product,ind) => (
           <div key={ind} className={styles.product_card}>
             <Image src={product.thumbnail} alt={product.thumbnail} width={200} height={200} />
             <div className={styles.product}>
@@ -69,6 +74,7 @@ export default function Home() {
       <footer className={styles.footer}>
         <p>© 2024 E-Commerce. All rights reserved.</p>
       </footer>
+      </>
     </div>
   );
 }

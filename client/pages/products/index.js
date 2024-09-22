@@ -10,11 +10,14 @@ function Product() {
     const { id } = params.query;
     const [product, setProduct] = useState();
     const router = useRouter()
+    const [loading,setLoading] = useState(false)
 
     const get_product = async () => {
+        setLoading(true)
         const response = await axios.get(`https://mindtide.onrender.com/product/get-products/${id}`);
         if (response.status === 200) {
             setProduct(response.data.product);
+            setLoading(false)
         } else if (response.data.status === 404) {
             alert(response.data.msg);
         }
@@ -50,6 +53,7 @@ function Product() {
 
     return (
         <div className={styles.productPage}>
+            {loading && <h2>Loading Product...</h2>}
             <h1 className={styles.productName}>{product?.name}</h1>
             <div className={styles.productDetails}>
                 <Image src={product?.thumbnail} alt={product?.name} width={400} height={400} className={styles.thumbnail} />
