@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import LOGO from '../styles/icons/logo.png'
 import SELL from '../styles/icons/sell.png'
 
-axios.post('/api/').then((res) => console.log(res.data.msg))
+axios.post('https://mind-tide.vercel.app/api').then((res) => console.log(res.data.msg))
 
 export default function Home() {
 
@@ -16,8 +16,7 @@ export default function Home() {
   const router = useRouter()
 
   const fetch_Products = async()=>{
-    const result = await axios.get('/api/fetchProducts')
-    console.log("TEST : ",result)
+    const result = await axios.get('https://mind-tide.vercel.app/api/fetchProducts')
     if(result.status === 200){
       setProducts(result.data.products)
     }
