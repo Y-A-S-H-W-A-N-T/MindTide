@@ -2,13 +2,13 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    "remotePatterns": [
+    domains: ['uspoloassn.in'], // Add your allowed hostname here
+    remotePatterns: [
       {
-        protocol: "https",
-        hostname: "firebasestorage.googleapis.com",
-        pathname: "/**"
-      }
-    ]
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
   },
   async headers() {
     return [
